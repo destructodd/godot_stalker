@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b5rm7u1t3brdv"]
+
+[ext_resource type="PackedScene" uid="uid://hbth6jwi3i7h" path="res://npc.tscn" id="1_oabld"]
+[ext_resource type="PackedScene" uid="uid://b058pbc6tt5tb" path="res://player.tscn" id="2_i7s6n"]
+[ext_resource type="PackedScene" uid="uid://bo4gimeeabwyf" path="res://statue.tscn" id="4_eq6nc"]
+[ext_resource type="PackedScene" uid="uid://drxt5pq2kn2yc" path="res://inherited_stalker.tscn" id="4_splo0"]
+
+[sub_resource type="GDScript" id="GDScript_xehqc"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_splo0"]
+size = Vector2(100.5, 2548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq6nc"]
+size = Vector2(2533, 128)
+
+[node name="Node2D" type="Node2D" unique_id=1136856729]
+y_sort_enabled = true
+script = SubResource("GDScript_xehqc")
+
+[node name="NPC" parent="." unique_id=592030601 instance=ExtResource("1_oabld")]
+position = Vector2(392, 166)
+
+[node name="NPC2" parent="." unique_id=303661984 instance=ExtResource("1_oabld")]
+position = Vector2(254, 242)
+
+[node name="NPC3" parent="." unique_id=2083902795 instance=ExtResource("1_oabld")]
+position = Vector2(527, 224)
+
+[node name="NPC4" parent="." unique_id=1973664665 instance=ExtResource("1_oabld")]
+position = Vector2(-615, -335)
+
+[node name="NPC5" parent="." unique_id=1125651729 instance=ExtResource("1_oabld")]
+position = Vector2(-423, 273)
+
+[node name="Player" parent="." unique_id=230259954 groups=["player"] instance=ExtResource("2_i7s6n")]
+position = Vector2(10, -7)
+
+[node name="StalkerNPC" parent="." unique_id=108292800 instance=ExtResource("4_splo0")]
+position = Vector2(523, -334)
+
+[node name="Statue" parent="." unique_id=1009464145 instance=ExtResource("4_eq6nc")]
+position = Vector2(-492, -498)
+
+[node name="Statue2" parent="." unique_id=2081933632 instance=ExtResource("4_eq6nc")]
+position = Vector2(382, -130)
+
+[node name="Statue3" parent="." unique_id=2019661134 instance=ExtResource("4_eq6nc")]
+position = Vector2(-773, 769)
+
+[node name="Statue4" parent="." unique_id=457401736 instance=ExtResource("4_eq6nc")]
+position = Vector2(-773, 769)
+
+[node name="Statue5" parent="." unique_id=183706637 instance=ExtResource("4_eq6nc")]
+position = Vector2(-492, 160)
+
+[node name="borders" type="Node2D" parent="." unique_id=889796137]
+
+[node name="HoirzontalBorders" type="StaticBody2D" parent="borders" unique_id=911580619]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/HoirzontalBorders" unique_id=1669622647]
+position = Vector2(-1280, -4)
+shape = SubResource("RectangleShape2D_splo0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/HoirzontalBorders" unique_id=146202486]
+position = Vector2(1280, 20)
+shape = SubResource("RectangleShape2D_splo0")
+
+[node name="VerticalBorders" type="StaticBody2D" parent="borders" unique_id=2053545946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/VerticalBorders" unique_id=1711456439]
+position = Vector2(-10.5, -1280)
+shape = SubResource("RectangleShape2D_eq6nc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/VerticalBorders" unique_id=754189197]
+position = Vector2(-13.25, 1280)
+shape = SubResource("RectangleShape2D_eq6nc")

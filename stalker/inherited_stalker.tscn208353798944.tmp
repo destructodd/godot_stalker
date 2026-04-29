@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://drxt5pq2kn2yc"]
+
+[ext_resource type="PackedScene" uid="uid://btgqaiptnpgdo" path="res://stalker_npc.tscn" id="1_fi5py"]
+[ext_resource type="Script" uid="uid://ub0x4mrgei6a" path="res://inherited_stalker.gd" id="2_ibhld"]
+
+[node name="InheritedStalkerNPC" unique_id=592030601 instance=ExtResource("1_fi5py")]
+script = ExtResource("2_ibhld")

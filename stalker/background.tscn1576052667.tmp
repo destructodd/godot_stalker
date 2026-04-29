@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b5rm7u1t3brdv"]
+
+[ext_resource type="PackedScene" uid="uid://hbth6jwi3i7h" path="res://npc.tscn" id="1_oabld"]
+[ext_resource type="PackedScene" uid="uid://b058pbc6tt5tb" path="res://player.tscn" id="2_i7s6n"]
+[ext_resource type="PackedScene" uid="uid://btgqaiptnpgdo" path="res://stalker_npc.tscn" id="3_xehqc"]
+
+[node name="Node2D" type="Node2D" unique_id=1136856729]
+
+[node name="NPC" parent="." unique_id=592030601 instance=ExtResource("1_oabld")]
+
+[node name="NPC2" parent="." unique_id=303661984 instance=ExtResource("1_oabld")]
+position = Vector2(239, 459)
+
+[node name="NPC3" parent="." unique_id=2083902795 instance=ExtResource("1_oabld")]
+position = Vector2(911, 340)
+
+[node name="Player" parent="." unique_id=230259954 instance=ExtResource("2_i7s6n")]
+position = Vector2(672, 270)
+
+[node name="StalkerNPC" parent="." unique_id=967378783 instance=ExtResource("3_xehqc")]

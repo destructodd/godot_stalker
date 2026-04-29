@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://hbth6jwi3i7h"]
+
+[ext_resource type="Texture2D" uid="uid://b7fpynup2435c" path="res://iz4mb1v3mqa51.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://df703sgdjccdc" path="res://npc.gd" id="1_xxcha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(148, 0, 148, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("1_ideak")
+region = Rect2(444, 0, 148, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 115, 201)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bc6q4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul7y6")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc6q4"]
+radius = 46.0
+height = 152.0
+
+[node name="Area2D" type="Area2D" unique_id=592030601]
+script = ExtResource("1_xxcha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=248740703]
+sprite_frames = SubResource("SpriteFrames_bc6q4")
+animation = &"left"
+offset = Vector2(20, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109475706]
+position = Vector2(20, -4)
+shape = SubResource("CapsuleShape2D_bc6q4")
